@@ -1,0 +1,48 @@
+=============================
+QNAP n8n Deployment Cheat Sheet
+=============================
+
+# Main Directories
+cd /share/Container/docker-compose/n8n-docker/
+
+# Start stack
+docker compose up -d
+
+# Stop stack
+docker compose down
+
+# Show running containers
+docker ps
+
+# Prune Docker unused objects (manual clean)
+docker system prune -af --volumes
+
+# Backup script location
+/share/Container/docker-backup.sh
+
+# Backup output location
+/share/Backups/docker-backups/
+
+# Edit Compose file
+vi /share/Container/docker-compose/n8n-docker/docker-compose.yml
+
+# Check Docker cron jobs (prune + backup)
+sudo vi /etc/config/crontab
+
+# Reload cron after edit
+sudo crontab /etc/config/crontab
+sudo /etc/init.d/crond.sh restart
+
+# Docker Socket on QNAP
+/var/run/system-docker.sock
+
+# Quick Check for Port Conflicts
+netstat -tulnp | grep 5678
+
+# Docker Compose Config Validation
+docker compose config
+
+# Logs (example for n8n)
+docker logs n8n
+
+=============================

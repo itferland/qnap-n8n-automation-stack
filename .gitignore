@@ -1,0 +1,12 @@
+# Ignore backups & logs (NAS specific)
+/share/Backups/
+/share/Container/docker-prune.log
+/share/Container/docker-backup.log
+
+# Ignore QNAP temp files
+*.DS_Store
+._*
+Thumbs.db
+
+# Ignore local env secrets
+.env
