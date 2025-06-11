@@ -3,7 +3,7 @@ version: '3.8'
 services:
 
   redis:
-    image: redis:6-alpine
+    image: redis:8-alpine
     container_name: redis
     restart: unless-stopped
     ports:
@@ -17,7 +17,7 @@ services:
         max-file: "3"
 
   n8n:
-    image: n8nio/n8n:1.94.1
+    image: n8nio/n8n:1.97.1
     container_name: n8n
     restart: unless-stopped
     environment:
